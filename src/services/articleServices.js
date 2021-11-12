@@ -1,6 +1,12 @@
+import axiosWithAuth from "../utils/axiosWithAuth";
 
-
-const articleService = ()=> {
+const articleService = async ()=> {
+    try{
+        const response = await axiosWithAuth().get('http://localhost:5000/api/article')
+        return response;
+    } catch (error){
+        console.error('Could not get articles', error)
+    }
 }
 
 export default articleService;
