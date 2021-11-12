@@ -15,15 +15,15 @@ const EditForm = (props)=> {
     const {handleEdit, handleEditCancel, editId} = props;
 
 
-    // useEffect(() =>{
-    //     axiosWithAuth()
-    //     .get(`http://localhost:5000/api/articles/${editId}`)
-    //     .then(response=>{
-    //         setArticle(response.data);
-    //     }).catch((error)=>{
-    //         console.error('Unable to Load Page', error)
-    //     })
-    // }, [])
+    useEffect(() =>{
+        axiosWithAuth()
+        .get(`http://localhost:5000/api/articles/${editId}`)
+        .then(response=>{
+            setArticle(response.data);
+        }).catch((error)=>{
+            console.error('Unable to Load Page', error)
+        })
+    }, [])
 
 
 
